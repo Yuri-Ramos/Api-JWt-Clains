@@ -1,6 +1,7 @@
 using Api_JWt_Clains.Data;
 using Microsoft.EntityFrameworkCore;
 using Api_JWt_Clains.Models;
+using MiniValidation;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -45,15 +46,26 @@ app.MapGet("/fonercedor/{id}",async
         .WithName("GetFornecedorPorId")
         .WithTags("Fornecedor");
 
-app.MapPost("/Fornecedor", async (
-  MinimalContextDb context, Fornecedor fornecedor )=>{
-    context.Fornecedores.Add(fornecedor);
-    var result = await context.SaveChangesAsync();
 
-  }
-).Produces<Fornecedor>(StatusCodes.Status201Created)
-        .Produces(StatusCodes.Status400BadRequest)
-        .WithName("GetFornecedorPorId")
-        .WithTags("Fornecedor");
+    app.MapPost("/fornecedor", async (
+        MinimalContextDb context,
+        Fornecedor fornecedor) =>
+    {
+        if (!MiniValidator.TryValidate(fornecedor, out var errors))
+            return Results.ValidationProblem(errors);
+
+        context.Fornecedores.Add(fornecedor);
+        var result = await context.SaveChangesAsync();
+
+        return result > 0
+            //? Results.Created($"/fornecedor/{fornecedor.Id}", fornecedor)
+            ? Results.CreatedAtRoute("GetFornecedorPorId", new { id = fornecedor.Id }, fornecedor)
+            : Results.BadRequest("Houve um problema ao salvar o registro");
+
+    }).ProducesValidationProblem()
+    .Produces<Fornecedor>(StatusCodes.Status201Created)
+    .Produces(StatusCodes.Status400BadRequest)
+    .WithName("PostFornecedor")
+    .WithTags("Fornecedor");
 
 app.Run();

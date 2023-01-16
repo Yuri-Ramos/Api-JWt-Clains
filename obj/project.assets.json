@@ -694,6 +694,39 @@
           }
         }
       },
+      "MinimalApis.Extensions/0.10.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.OpenApi": "1.4.3",
+          "MiniValidation": "0.7.2"
+        },
+        "compile": {
+          "lib/net7.0/MinimalApis.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/MinimalApis.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "MiniValidation/0.7.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/MiniValidation.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/MiniValidation.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Mono.TextTemplating/2.2.1": {
         "type": "package",
         "dependencies": {
@@ -2459,6 +2492,38 @@
         "version.txt"
       ]
     },
+    "MinimalApis.Extensions/0.10.1": {
+      "sha512": "1TAhHOVW+JY6nEqpq8anQSRCwLk7b9SKZg0TAkuEmHDdOTMEz4yBS0x7EM32V0313/vaBFhnrgotgjeizzF/nA==",
+      "type": "package",
+      "path": "minimalapis.extensions/0.10.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net6.0/MinimalApis.Extensions.dll",
+        "lib/net6.0/MinimalApis.Extensions.xml",
+        "lib/net7.0/MinimalApis.Extensions.dll",
+        "lib/net7.0/MinimalApis.Extensions.xml",
+        "minimalapis.extensions.0.10.1.nupkg.sha512",
+        "minimalapis.extensions.nuspec"
+      ]
+    },
+    "MiniValidation/0.7.2": {
+      "sha512": "5OVWsUw6q5doL63Ki7JdlXD62C5N1eO7YNxxbIdN7nQk53l10juVkFSYoKFmLenL8qpNmoyU6OwEr4MulaibBw==",
+      "type": "package",
+      "path": "minivalidation/0.7.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net6.0/MiniValidation.dll",
+        "lib/net6.0/MiniValidation.xml",
+        "lib/netstandard2.0/MiniValidation.dll",
+        "lib/netstandard2.0/MiniValidation.xml",
+        "minivalidation.0.7.2.nupkg.sha512",
+        "minivalidation.nuspec"
+      ]
+    },
     "Mono.TextTemplating/2.2.1": {
       "sha512": "KZYeKBET/2Z0gY1WlTAK7+RHTl7GSbtvTLDXEZZojUdAPqpQNDL6tHv7VUpqfX5VEOh+uRGKaZXkuD253nEOBQ==",
       "type": "package",
@@ -3906,6 +3971,8 @@
       "Microsoft.AspNetCore.OpenApi >= 7.0.2",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.2",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.2",
+      "MiniValidation >= 0.7.2",
+      "MinimalApis.Extensions >= 0.10.1",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
   },
@@ -3961,6 +4028,14 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[7.0.2, )"
+          },
+          "MiniValidation": {
+            "target": "Package",
+            "version": "[0.7.2, )"
+          },
+          "MinimalApis.Extensions": {
+            "target": "Package",
+            "version": "[0.10.1, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

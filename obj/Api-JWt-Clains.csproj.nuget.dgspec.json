@@ -54,6 +54,14 @@
               "target": "Package",
               "version": "[7.0.2, )"
             },
+            "MiniValidation": {
+              "target": "Package",
+              "version": "[0.7.2, )"
+            },
+            "MinimalApis.Extensions": {
+              "target": "Package",
+              "version": "[0.10.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
