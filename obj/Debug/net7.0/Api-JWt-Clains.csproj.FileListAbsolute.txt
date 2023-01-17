@@ -76,3 +76,8 @@ C:\Users\ramos\Documents\Yuri Estudos\Projetos\C#\Api-JWt-Clains\bin\Debug\net7.
 C:\Users\ramos\Documents\Yuri Estudos\Projetos\C#\Api-JWt-Clains\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\ramos\Documents\Yuri Estudos\Projetos\C#\Api-JWt-Clains\bin\Debug\net7.0\MinimalApis.Extensions.dll
 C:\Users\ramos\Documents\Yuri Estudos\Projetos\C#\Api-JWt-Clains\bin\Debug\net7.0\MiniValidation.dll
+C:\Users\ramos\Documents\Yuri Estudos\Projetos\C#\Api-JWt-Clains\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\ramos\Documents\Yuri Estudos\Projetos\C#\Api-JWt-Clains\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\ramos\Documents\Yuri Estudos\Projetos\C#\Api-JWt-Clains\bin\Debug\net7.0\NetDevPack.Identity.dll
+C:\Users\ramos\Documents\Yuri Estudos\Projetos\C#\Api-JWt-Clains\bin\Debug\net7.0\NetDevPack.Security.Jwt.AspNetCore.dll
+C:\Users\ramos\Documents\Yuri Estudos\Projetos\C#\Api-JWt-Clains\bin\Debug\net7.0\NetDevPack.Security.Jwt.Core.dll
