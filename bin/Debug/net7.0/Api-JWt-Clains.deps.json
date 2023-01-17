@@ -11,6 +11,8 @@
           "Microsoft.AspNetCore.OpenApi": "7.0.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.2",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.2",
+          "MiniValidation": "0.7.2",
+          "MinimalApis.Extensions": "0.10.1",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
         "runtime": {
@@ -395,6 +397,26 @@
             "assetType": "runtime",
             "assemblyVersion": "5.0.0.0",
             "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "MinimalApis.Extensions/0.10.1": {
+        "dependencies": {
+          "Microsoft.OpenApi": "1.4.3",
+          "MiniValidation": "0.7.2"
+        },
+        "runtime": {
+          "lib/net7.0/MinimalApis.Extensions.dll": {
+            "assemblyVersion": "0.10.1.0",
+            "fileVersion": "0.10.1.0"
+          }
+        }
+      },
+      "MiniValidation/0.7.2": {
+        "runtime": {
+          "lib/net6.0/MiniValidation.dll": {
+            "assemblyVersion": "0.7.2.0",
+            "fileVersion": "0.7.2.0"
           }
         }
       },
@@ -959,6 +981,20 @@
       "sha512": "sha512-Bh6blKG8VAKvXiLe2L+sEsn62nc1Ij34MrNxepD2OCrS5cpCwQa9MeLyhVQPQ/R4Wlzwuy6wMK8hLb11QPDRsQ==",
       "path": "microsoft.win32.systemevents/5.0.0",
       "hashPath": "microsoft.win32.systemevents.5.0.0.nupkg.sha512"
+    },
+    "MinimalApis.Extensions/0.10.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1TAhHOVW+JY6nEqpq8anQSRCwLk7b9SKZg0TAkuEmHDdOTMEz4yBS0x7EM32V0313/vaBFhnrgotgjeizzF/nA==",
+      "path": "minimalapis.extensions/0.10.1",
+      "hashPath": "minimalapis.extensions.0.10.1.nupkg.sha512"
+    },
+    "MiniValidation/0.7.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5OVWsUw6q5doL63Ki7JdlXD62C5N1eO7YNxxbIdN7nQk53l10juVkFSYoKFmLenL8qpNmoyU6OwEr4MulaibBw==",
+      "path": "minivalidation/0.7.2",
+      "hashPath": "minivalidation.0.7.2.nupkg.sha512"
     },
     "Mono.TextTemplating/2.2.1": {
       "type": "package",
