@@ -14,6 +14,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<MinimalContextDb>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddIdentityEntityFrameworkContextConfiguration(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
+b=> b.MigrationsAssembly("MinimalPilot")));
 
 
 var app = builder.Build();
