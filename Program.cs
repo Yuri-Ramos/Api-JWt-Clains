@@ -7,6 +7,7 @@ using NetDevPack.Identity.Jwt;
 using Microsoft.AspNetCore.Identity;
 using NetDevPack.Identity.Model;
 using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +25,12 @@ b=> b.MigrationsAssembly("MinimalPilot")));
 
 builder.Services.AddIdentityConfiguration();
 builder.Services.AddJwtConfiguration(builder.Configuration,"AppSettings");
+// add policas de filtro
+builder.Services.AddAuthorization(options => 
+{
+    options.AddPolicy("ExcluirFornecedor",
+    policy => policy.RequireClaim("ExcluirFornecedor"));
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -39,7 +46,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-  app.MapPost("/registro",  async (
+  app.MapPost("/registro", [AllowAnonymous] async (
         SignInManager<IdentityUser> signInManager,
         UserManager<IdentityUser> userManager,
         IOptions<AppJwtSettings> appJwtSettings,
@@ -80,7 +87,7 @@ app.MapControllers();
       .WithName("RegistroUsuario")
       .WithTags("Usuario");
 
-         app.MapPost("/login",  async (
+         app.MapPost("/login", [AllowAnonymous] async (
         SignInManager<IdentityUser> signInManager,
         UserManager<IdentityUser> userManager,
         IOptions<AppJwtSettings> appJwtSettings,
@@ -121,7 +128,7 @@ app.MapGet("/fonercedor", async (MinimalContextDb context) => await context.Forn
 .WithName("GetFornecedor")
 .WithTags("Fornecedor");
 
-app.MapGet("/fonercedor/{id}", async
+app.MapGet("/fonercedor/{id}", [AllowAnonymous] async
 (Guid id,
  MinimalContextDb context) =>
        await context.Fornecedores.FindAsync(id)
@@ -134,7 +141,7 @@ app.MapGet("/fonercedor/{id}", async
         .WithTags("Fornecedor");
 
 
-app.MapPost("/fornecedor", async (
+app.MapPost("/fornecedor", [Authorize] async (
   MinimalContextDb context,
   Fornecedor fornecedor) =>
   {
@@ -146,7 +153,7 @@ app.MapPost("/fornecedor", async (
   .WithName("PostFornecedor")
   .WithTags("Fornecedor");
 
-app.MapPut("/fornecedor/{id}", async (
+app.MapPut("/fornecedor/{id}", [Authorize] async (
     Guid id, MinimalContextDb context, Fornecedor fornecedor
 
 ) =>
@@ -173,7 +180,7 @@ app.MapPut("/fornecedor/{id}", async (
 
 
 
-app.MapDelete("/fornecedor/{id}", async (
+app.MapDelete("/fornecedor/{id}", [Authorize] async (
     Guid id,
     MinimalContextDb context) =>
 {
